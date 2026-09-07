@@ -39,7 +39,6 @@ fun ProfilScreen() {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // ---- Foto profil pakai Box (bertumpuk: foto + badge status) ----
         Box(
             contentAlignment = Alignment.BottomEnd
         ) {
@@ -62,7 +61,6 @@ fun ProfilScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // ---- Nama & identitas ----
         Text(
             text = "Alchalisa Fathinna",
             fontSize = 22.sp,
@@ -81,7 +79,6 @@ fun ProfilScreen() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // ---- Baris info kontak pakai Row + Box + Icon ----
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
@@ -94,7 +91,6 @@ fun ProfilScreen() {
                 context.startActivity(intent)
             }
 
-            // Telepon -> buka dialer dengan nomor terisi
             KontakItem(icon = Icons.Default.Phone, label = "Telepon") {
                 val intent = Intent(Intent.ACTION_DIAL).apply {
                     data = Uri.parse("tel:082282713297")
@@ -102,7 +98,6 @@ fun ProfilScreen() {
                 context.startActivity(intent)
             }
 
-            // Lokasi -> buka Google Maps
             KontakItem(icon = Icons.Default.Place, label = "Lokasi") {
                 val intent = Intent(Intent.ACTION_VIEW).apply {
                     data = Uri.parse("https://maps.app.goo.gl/6meUnEhEChknAFgu8")
@@ -113,7 +108,6 @@ fun ProfilScreen() {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // ---- Tombol aksi ----
         Row(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
@@ -127,7 +121,6 @@ fun ProfilScreen() {
     }
 }
 
-// Komponen kecil reusable untuk tiap item kontak (icon dalam lingkaran + label)
 @Composable
 fun KontakItem(
     icon: ImageVector,
